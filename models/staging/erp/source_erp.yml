@@ -1,0 +1,12 @@
+sources:
+  - name: erp_adventure_works
+    description: sistema de vendas da Adventure Works.
+    schema: raw_adventure_works
+    database: fea24_11
+    tables:
+      - name: productcategory
+        columns:
+          - name: productcategoryid
+            data_tests:
+              - unique
+              - not_null
