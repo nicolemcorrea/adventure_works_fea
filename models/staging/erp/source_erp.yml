@@ -31,4 +31,16 @@ sources:
             data_tests:
               - unique
               - not_null
+
+      - name: salesreason
+        columns:
+          - name: salesreasonid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: salesorderheadersalesreason
+        description: Esta tabela vai servir para ligar salesreason a salesorderheader
+        
+
                   
