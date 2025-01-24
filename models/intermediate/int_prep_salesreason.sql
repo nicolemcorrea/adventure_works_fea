@@ -1,4 +1,5 @@
 with
+/* Chamada dos modelos necessários. */
     salesorderheadersalesreason as (select * from {{ ref('stg_erp__salesorderheadersalesreason') }})
     , salesreason as (select * from {{ ref('stg_erp__salesreason') }})
 
