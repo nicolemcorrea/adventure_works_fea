@@ -31,4 +31,11 @@ sources:
             data_tests:
               - unique
               - not_null
+
+      - name: salesreason
+        columns:
+          - name: salesreasonid
+            data_tests:
+              - unique
+              - not_null
                   
