@@ -24,4 +24,11 @@ sources:
             data_tests:
               - unique
               - not_null
+
+      - name: creditcard
+        columns:
+          - name: creditcardid
+            data_tests:
+              - unique
+              - not_null
                   
