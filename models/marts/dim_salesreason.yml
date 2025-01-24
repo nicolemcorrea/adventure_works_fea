@@ -1,5 +1,5 @@
 models:
-  - name: salesreason
+  - name: dim_salesreason
     description: Modelo que enriquece os dados de motivos de venda com nome e tipo de motivos.
     columns:
       - name: SK_SALESREASON
