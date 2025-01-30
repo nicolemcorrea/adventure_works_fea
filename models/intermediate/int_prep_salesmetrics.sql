@@ -34,7 +34,7 @@ with
   sales_metrics as (
         select
         --foi feito um hash para a criação da surrogate key, pois pk_salesorder não é único e não há outra coluna que, combinada com ele, garanta a unicidade
-          coalesce(md5(cast(pk_salesorder as TEXT) || '-' || cast(pk_salesorderdetail as TEXT)), 'default_value') as sk_salesorder
+          md5(cast(coalesce(cast(pk_salesorderdetail as TEXT), 'default_value') || '-' || coalesce(cast(pk_salesorder as TEXT), 'default_value') as TEXT)) as sk_salesorder
           , pk_salesorder
           , fk_customer
           , fk_address
@@ -43,7 +43,7 @@ with
           , order_date
           , order_qty
           , unit_price
-          , cast(unit_price * order_qty as numeric(18,2)) as gross_price -- Calcula o preço total antes de qualquer desconto
+          , unit_price * order_qty as gross_price -- Calcula o preço total antes de qualquer desconto
           , cast(unit_price * (1- discount_price) * order_qty as numeric(18,2)) as net_price -- Preço líquido, ou seja, o valor total após aplicar o desconto
           ,  case
                 when discount_price > 0 then true
