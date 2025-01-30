@@ -3,9 +3,9 @@ with
     select
         cast(SALESORDERID as int) as pk_salesorder
         , cast(CUSTOMERID as int) as fk_customer
-        , cast(ORDERDATE as timestamp) as order_date
         , cast(SHIPTOADDRESSID as int) as fk_address
         , cast (CREDITCARDID as int) as fk_creditcard 
+        , cast(ORDERDATE as timestamp) as order_date
         , cast(SUBTOTAL as numeric(18,2)) as salesorder_subtotal
         , cast(TAXAMT as numeric(18,2)) as salesorder_tax
         , cast(FREIGHT as numeric(18,2)) as  salesorder_freight
@@ -15,5 +15,4 @@ with
     from {{ source('erp_adventure_works', 'salesorderheader') }}
 )
 
-select *
-from src_salesorderheader
+select * from src_salesorderheader
