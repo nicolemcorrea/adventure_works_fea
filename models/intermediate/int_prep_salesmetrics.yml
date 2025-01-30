@@ -5,6 +5,7 @@ models:
       - name: SK_SALESORDER
         description: Surrogate key para pedido
         data_tests:
+          - unique
           - not_null
 
       - name: PK_SALESORDER
