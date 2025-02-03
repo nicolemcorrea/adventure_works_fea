@@ -9,4 +9,4 @@ with
 )
 select sum_gross_price
 from sales_2011 
-where sum_gross_price between 12646112.00 and 12646113.00
+where not (sum_gross_price between 12646112.00 and 12646113.00)
