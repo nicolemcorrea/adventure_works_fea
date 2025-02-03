@@ -8,8 +8,8 @@ final_product as (
     select
         product.pk_product,
         product.name_product,
-        COALESCE(productcategory.name_productcategory, 'Components & Accessories') as name_productcategory,  -- Usando COALESCE aqui
-        COALESCE(productsubcategory.name_productsubcategory, 'Components & Accessories') as name_productsubcategory -- Usando COALESCE aqui
+        coalesce(productcategory.name_productcategory, 'Components & Accessories') as name_productcategory,  
+        coalesce(productsubcategory.name_productsubcategory, 'Components & Accessories') as name_productsubcategory 
     from product
     left join productsubcategory on product.fk_productsubcategory = productsubcategory.pk_productsubcategory
     left join productcategory on productsubcategory.fk_productcategory = productcategory.pk_productcategory
